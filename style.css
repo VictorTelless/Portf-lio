@@ -663,10 +663,15 @@ main .cert {
    CARTÕES DE PROJETOS
 ========================== */
 
+/* ==========================
+   PROJETOS EM DESTAQUE
+========================== */
+
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: minmax(0, 760px);
+    justify-content: start;
+    gap: 28px;
 }
 
 .projeto-card {
@@ -679,16 +684,17 @@ main .cert {
 }
 
 .projeto-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--accent);
 }
 
-
+/* Imagem do projeto */
 
 .projeto-imagem {
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #fff8ed;
+    border-bottom: 1px solid var(--border);
 }
 
 .projeto-imagem img {
@@ -699,14 +705,14 @@ main .cert {
     object-position: center;
 }
 
-
+/* Informações */
 
 .projeto-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    padding: 26px;
+    gap: 14px;
+    padding: 28px;
 }
 
 .projeto-categoria {
@@ -719,57 +725,105 @@ main .cert {
 .projeto-info h3 {
     color: var(--text);
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
 }
 
 .projeto-descricao {
+    max-width: 620px;
     color: var(--muted);
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.8;
 }
+
+/* Tecnologias */
 
 .projeto-tecnologias {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 2px;
 }
 
 .projeto-tecnologias li {
-    padding: 6px 10px;
+    padding: 7px 11px;
     color: var(--text);
     background: var(--surface-hover);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 7px;
     font-size: 0.8rem;
+}
+
+/* Links */
+
+.projeto-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
 }
 
 .projeto-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin-top: 4px;
-    color: var(--accent);
+    padding: 11px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #141619;
+    background: var(--accent);
+    font-size: 0.9rem;
     font-weight: 700;
-    transition: gap 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .projeto-link:hover {
-    gap: 13px;
+    background: #c9fa8b;
+    transform: translateY(-2px);
 }
+
+.projeto-link-secundario {
+    color: var(--text);
+    background: transparent;
+    border-color: var(--border);
+}
+
+.projeto-link-secundario:hover {
+    color: var(--accent);
+    background: var(--surface-hover);
+    border-color: var(--accent);
+}
+
+/* Responsividade */
 
 @media (max-width: 700px) {
     .projetos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projeto-imagem {
-        height: 200px;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .projeto-info {
         padding: 22px;
     }
+
+    .projeto-info h3 {
+        font-size: 1.45rem;
+    }
+
+    .projeto-links {
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .projeto-link {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
+
+/* Respeita preferência por menos animações */
 
 @media (prefers-reduced-motion: reduce) {
     .projeto-card,
@@ -777,23 +831,8 @@ main .cert {
         transition: none;
     }
 
-    .projeto-card:hover {
+    .projeto-card:hover,
+    .projeto-link:hover {
         transform: none;
     }
 }
-.projeto-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    margin-top: 4px;
-}
-
-.projeto-link-secundario {
-    color: var(--muted);
-}
-
-.projeto-link-secundario:hover {
-    color: var(--accent);
-}
-
