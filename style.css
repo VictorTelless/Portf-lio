@@ -76,6 +76,7 @@ p {
    2. Cabeçalho e navegação
 ========================== */
 
+
 header {
     position: sticky;
     top: 0;
@@ -110,25 +111,65 @@ header .navegacao-primaria {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 30px;
 }
 
 header .navegacao-primaria li a {
     position: relative;
     display: inline-block;
-    padding: 10px 15px;
+    padding: 8px 0;
     color: var(--muted);
+    background: transparent;
+    border-radius: 0;
     font-size: 0.92rem;
     font-weight: 500;
-    border-radius: 8px;
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 header .navegacao-primaria li a:hover {
     color: var(--accent);
-    background: rgba(184, 243, 107, 0.08);
+    background: transparent;
+}
+
+header .navegacao-primaria li a.ativo {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+header .navegacao-primaria li a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 5%;
+    }
+
+    header h1 {
+        font-size: 1.65rem;
+    }
+
+    header .navegacao-primaria {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    header .navegacao-primaria li a {
+        padding: 7px 0;
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header .navegacao-primaria li a {
+        transition: none;
+    }
 }
 
 /* Acessibilidade: foco visível pelo teclado */
@@ -1060,14 +1101,15 @@ main .cert {
 
 /* Página atual no menu */
 
+
 header .navegacao-primaria li a.ativo {
     color: var(--accent);
-    background: rgba(184, 243, 107, 0.08);
+    background: transparent;
     font-weight: 700;
 }
 
 header .navegacao-primaria li a.ativo:hover {
-    background: rgba(184, 243, 107, 0.13);
+    background: transparent;
 }
 
 /* Links profissionais */
@@ -1104,4 +1146,16 @@ header .navegacao-primaria li a.ativo:hover {
     .section-div .hero-redes a {
         transition: none;
     }
+}
+body > header {
+    justify-content: space-between;
+    text-align: left;
+}
+
+body > header nav {
+    margin-left: auto;
+}
+
+body > header .navegacao-primaria {
+    justify-content: flex-end;
 }
