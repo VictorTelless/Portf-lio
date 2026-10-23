@@ -1159,3 +1159,87 @@ body > header nav {
 body > header .navegacao-primaria {
     justify-content: flex-end;
 }
+
+@media (max-width: 768px) {
+    .sobre img {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: 100%;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        justify-self: center;
+    }
+
+    .sobre_texto {
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .sobre_texto h2 {
+        text-align: center;
+    }
+
+    .sobre_texto h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sobre_texto p {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        gap: 16px;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    header nav {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    header nav ul.navegacao-primaria {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+    }
+
+    header nav ul.navegacao-primaria li {
+        margin: 0;
+        padding: 0;
+    }
+
+    header > i {
+        align-self: center;
+    }
+}
