@@ -1,55 +1,126 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Telles | Portfólio</title>    
-    <link rel = "stylesheet" href="style.css">
-    
+    <title>Victor Telles | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
     <header>
         <h1>Victor <span>Telles</span></h1>
+
         <nav>
-            <ul class="navegacao-primaria" >
-               <li><a href="index.html">Home </a></li>
-                <li><a href="about.html">About </a></li>
-                <li><a href="certificados.html">Certificados </a></li>
-                
-                
+            <ul class="navegacao-primaria">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="certificados.html">Certificados</a></li>
             </ul>
         </nav>
+
         <i class="fa-solid fa-bars"></i>
     </header>
-    <section aria-label="Apresentação" class="section-div">    
-        
-<div class="hero-conteudo">
-    <p class="hero-etiqueta">OLÁ, SEJA BEM-VINDO AO MEU PORTFÓLIO</p>
 
-    <h2>Hi there! I'm</h2>
-    <h2 class="digitando">a Computer Science Student!</h2>
+    <!-- Apresentação inicial -->
+    <section aria-label="Apresentação" class="section-div">
 
-    <p class="hero-descricao">
-        Olá! Meu nome é <strong>Victor Telles</strong> e sou estudante de
-        <strong>Ciência da Computação</strong>. Tenho grande interesse em
-        tecnologia e estou sempre buscando aprender novas linguagens de
-        programação e expandir meus conhecimentos. Atualmente, minhas
-        principais áreas de interesse são o desenvolvimento
-        <strong>Front-end</strong> e a <strong>criação de jogos</strong>,
-        campos nos quais procuro desenvolver minhas habilidades por meio
-        de estudos e projetos práticos.
-    </p>
+        <div class="hero-conteudo">
+            <p class="hero-etiqueta">
+                OLÁ, SEJA BEM-VINDO AO MEU PORTFÓLIO
+            </p>
 
-    <a class="hero-botao" href="certificados.html">
-        Ver meus certificados
-    </a>
+            <h2>Hi there! I'm</h2>
+            <h2 class="digitando">a Computer Science Student!</h2>
+
+            <p class="hero-descricao">
+                Olá! Meu nome é <strong>Victor Telles</strong> e sou estudante de
+                <strong>Ciência da Computação</strong>. Tenho grande interesse em
+                tecnologia e estou sempre buscando aprender novas linguagens de
+                programação e expandir meus conhecimentos. Atualmente, minhas
+                principais áreas de interesse são o desenvolvimento
+                <strong>Front-end</strong> e a <strong>criação de jogos</strong>,
+                campos nos quais procuro desenvolver minhas habilidades por meio
+                de estudos e projetos práticos.
+            </p>
+
+            <a class="hero-botao" href="certificados.html">
+                Ver meus certificados
+            </a>
+        </div>
+
+        <img
+            src="https://i.ibb.co/RGSXZzGj/Whats-App-Image-2026-06-08-at-11-33-11.jpg"
+            alt="Foto de Victor Telles"
+        >
+    </section>
+
+    <!-- Projetos em destaque -->
+    <section class="projetos" id="projetos">
+        <div class="projetos-titulo">
+            <p>MEU TRABALHO</p>
+
+            <h2>Projetos em destaque</h2>
+
+            <span>
+                Projetos que transformam ideias em soluções práticas.
+            </span>
+        </div>
+
+
+
+<div class="projetos-grid">
+    <article class="projeto-card">
+        <div class="projeto-imagem">
+            <img
+                src="https://i.ibb.co/JWc4fpBR/image.png"
+                alt="Página inicial do site Três Virgínias"
+            >
+        </div>
+
+        <div class="projeto-info">
+            <p class="projeto-categoria">DESENVOLVIMENTO WEB</p>
+
+            <h3>Três Virgínias</h3>
+
+            <p class="projeto-descricao">
+                Catálogo digital para um negócio familiar, com apresentação
+                de produtos e direcionamento de pedidos pelo WhatsApp.
+            </p>
+
+            <ul class="projeto-tecnologias">
+                <li>Python</li>
+                <li>Django</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+
+            <div class="projeto-links">
+                <a
+                    class="projeto-link"
+                    href="https://tres-virginias.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visitar site <span aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                    class="projeto-link projeto-link-secundario"
+                    href="https://github.com/VictorTelless/tres-virginias"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ver código no GitHub <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </article>
 </div>
 
-        <img src="https://i.ibb.co/RGSXZzGj/Whats-App-Image-2026-06-08-at-11-33-11.jpg" alt="Foto de Victor Telles">
-      </section>
-
- 
+    </section>
 
     <script src="script.js"></script>
 </body>
