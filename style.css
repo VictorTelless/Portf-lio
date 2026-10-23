@@ -345,15 +345,36 @@ main {
 }
 
 main .sobre,
+
 main .cert {
     width: min(100%, var(--content-width));
+    box-sizing: border-box;
     margin: 0 auto;
-    padding: 90px 40px;
+    padding: 80px 40px 96px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-    gap: 32px;
+    align-items: stretch;
+    gap: 28px;
 }
+
+/* Ajustes para telas médias */
+@media (max-width: 900px) {
+    main .cert {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        padding: 64px 28px 80px;
+    }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    main .cert {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 48px 20px 64px;
+    }
+}
+
 
 .sobre_titulo,
 .cert_titulo {
@@ -466,42 +487,83 @@ main .cert {
     font-size: 1.05rem;
 }
 
+
 /* ==========================
-   6. Certificados
+   GRADE DE CERTIFICADOS
 ========================== */
 
 .container {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
     gap: 24px;
     margin-top: 12px;
 }
 
 .container div {
     min-width: 0;
-    padding: 12px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 14px;
+    align-items: stretch;
+    gap: 16px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
 }
 
 .container div:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     background: var(--surface-hover);
     border-color: rgba(184, 243, 107, 0.4);
 }
 
 .container img {
+    display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    object-position: center;
     border-radius: 8px;
+    background: var(--surface);
     cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .container div {
+        padding: 12px;
+    }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .container div {
+        transition: none;
+    }
+
+    .container div:hover {
+        transform: none;
+    }
 }
 
 /* ==========================
